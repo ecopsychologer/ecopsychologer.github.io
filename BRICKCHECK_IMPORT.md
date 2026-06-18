@@ -6,9 +6,8 @@ points to `/brickcheck/`.
 
 Do not serve the raw Vite source submodule at `/brickcheck/`; the source
 `index.html` points at TypeScript files that GitHub Pages will not build on
-request. The `/brickcheck/` URL should be owned by the BrickCheck repo's GitHub
-Pages deployment, or by a checked-in static build artifact if that workflow is
-chosen later.
+request. This repo serves `/brickcheck/` from a checked-in static build copied
+from `external/brickcheck-source/dist`.
 
 ## One-time GitHub setup
 
@@ -42,8 +41,19 @@ git add external/brickcheck-source
 git commit -m "Update BrickCheck"
 ```
 
-For the live PWA, enable GitHub Pages in the `ecopsychologer/brickcheck` repo so
-its production build publishes at `https://ecopsychologer.github.io/brickcheck/`.
+For the live PWA in this site repo, rebuild the submodule and refresh the
+checked-in static artifact:
+
+```bash
+cd external/brickcheck-source
+npm ci
+npm test
+npm run build
+rsync -a --delete dist/ ../../brickcheck/
+cd ../..
+git add brickcheck external/brickcheck-source
+git commit -m "Update BrickCheck"
+```
 
 ## Pages URL rename
 
