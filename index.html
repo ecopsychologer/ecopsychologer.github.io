@@ -1,50 +1,97 @@
-<!DOCTYPE html>
-<html>
-  <title>
-    jcschoen
-  </title>
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="animatronix.css" />
-    <h1 class="header">
-      The website of
-      <a href="https://www.keybase.io/jcschoen" class="header">jcschoen</a>
-    </h1>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" type="text/css" href="animatronix.css">
-    <script src="animatronix.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <!-- Google Analytics -->
-    <script>
-      (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-          (i[r].q = i[r].q || []).push(arguments)
-        },
-        i[r].l = 1 * new Date();
-        a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-      ga('create', 'UA-105517031-1', 'auto');
-      ga('send', 'pageview');
-    </script>
+    <meta
+      name="description"
+      content="ecopsychologer's GitHub Pages home for small web projects, tools, and archived experiments."
+    />
+    <meta name="theme-color" content="#f4b8c7" />
+    <title>ecopsychologer</title>
+    <link rel="stylesheet" href="site.css" />
   </head>
   <body>
-    <h1><div id="temp"></div><div id="minutely"></div></h1>
-    <h2><div id="location"></div></h2>
-    <button onclick="location.href='https://github.com/jcschoen'">GitHub</button>
-    <a href="https://darksky.net/poweredby/" class="header"> Powered by Dark Sky </a>
+    <header class="site-header" id="home">
+      <a class="brand" href="#home" aria-label="ecopsychologer home">ecopsychologer</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#archive">Archive</a>
+        <a href="https://github.com/ecopsychologer">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Personal web project shelf</p>
+          <h1 id="hero-title">ecopsychologer.github.io</h1>
+          <p>
+            A calm little home for web projects, local-first tools, and the experiments
+            worth keeping reachable.
+          </p>
+          <div class="hero-actions" aria-label="Featured links">
+            <a class="button primary" href="/brickcheck/">Open BrickCheck</a>
+            <a class="button secondary" href="#archive">Visit the archive</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-hidden="true">
+          <span>local-first</span>
+          <span>projects</span>
+          <span>archive</span>
+          <span>pwa</span>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <p class="eyebrow">Projects</p>
+          <h2 id="projects-title">Useful things live here.</h2>
+        </div>
+
+        <div class="project-list">
+          <article class="project-card">
+            <div>
+              <p class="project-kicker">Progressive Web App</p>
+              <h3>BrickCheck</h3>
+              <p>
+                A local-first Pick a Brick order checker for importing LEGO Shop order PDFs,
+                reviewing parsed rows, and working through part verification on mobile.
+              </p>
+            </div>
+            <a class="text-link" href="/brickcheck/" aria-label="Open BrickCheck">
+              Open BrickCheck
+            </a>
+          </article>
+
+          <article class="project-card muted-card">
+            <div>
+              <p class="project-kicker">Future shelf</p>
+              <h3>More later</h3>
+              <p>
+                This space is ready for the next small web thing without needing another
+                full site rebuild.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section archive-section" id="archive" aria-labelledby="archive-title">
+        <div class="section-heading">
+          <p class="eyebrow">Archive</p>
+          <h2 id="archive-title">The old site is preserved.</h2>
+        </div>
+        <p>
+          The original jcschoen weather experiment is tucked away as a historical page.
+          The weather API is not being repaired, but the page and its assets are still here.
+        </p>
+        <a class="text-link" href="/archive/jcschoen-weather/">Open the archived site</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Built for small web projects, GitHub Pages, and local-first experiments.</p>
+    </footer>
   </body>
-  <script src="weather-app.js"></script>
-  <form>
-   <input type="text" id="apikey">
-   <input type="submit" value="Set API Key" onclick="setAPI()">
-  </form>
-  <button onclick="weather()"> Get Weather </button>
 </html>

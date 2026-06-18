@@ -1,0 +1,4 @@
+[submodule "brickcheck"]
+	path = external/brickcheck-source
+	url = https://github.com/ecopsychologer/brickcheck.git
+	branch = trunk
