@@ -2,3 +2,7 @@
 	path = external/brickcheck-source
 	url = https://github.com/ecopsychologer/brickcheck.git
 	branch = trunk
+[submodule "photo-calendar-pwa"]
+	path = photo-calendar
+	url = https://github.com/ecopsychologer/Photo-Calendar-PWA.git
+	branch = trunk
