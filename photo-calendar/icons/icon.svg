@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Photo Calendar">
+  <rect width="512" height="512" rx="96" fill="#f7f3ea"/>
+  <rect x="78" y="104" width="356" height="330" rx="38" fill="#fffdf8" stroke="#176b5d" stroke-width="24"/>
+  <path d="M78 174h356" stroke="#176b5d" stroke-width="24"/>
+  <circle cx="172" cy="116" r="28" fill="#b85f3c"/>
+  <circle cx="340" cy="116" r="28" fill="#b85f3c"/>
+  <rect x="124" y="218" width="264" height="166" rx="22" fill="#1f5d83"/>
+  <circle cx="316" cy="268" r="30" fill="#f4c56a"/>
+  <path d="M130 374l80-82 52 50 42-38 78 70z" fill="#f3efe4"/>
+</svg>

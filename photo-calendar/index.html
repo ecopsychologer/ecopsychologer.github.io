@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A photo-first calendar Progressive Web App."
+    />
+    <meta name="theme-color" content="#f7f3ea" />
+    <title>Photo Calendar</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-lockup" aria-label="Photo Calendar">
+          <img src="./icons/icon.svg" alt="" class="brand-icon" />
+          <div>
+            <h1>Photo Calendar</h1>
+            <p id="monthLabel" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <nav class="month-controls" aria-label="Calendar navigation">
+          <button class="icon-button" type="button" id="prevMonth" aria-label="Previous month">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <button class="today-button" type="button" id="todayButton">Today</button>
+          <button class="icon-button" type="button" id="nextMonth" aria-label="Next month">
+            <span aria-hidden="true">›</span>
+          </button>
+        </nav>
+      </header>
+
+      <main>
+        <section class="toolbar" aria-label="Calendar options">
+          <div class="segmented-control" role="group" aria-label="Day size">
+            <button type="button" data-zoom="compact">Compact</button>
+            <button type="button" data-zoom="comfortable">Comfort</button>
+            <button type="button" data-zoom="large">Large</button>
+          </div>
+          <div class="segmented-control" role="group" aria-label="Photo fit">
+            <button type="button" data-image-fit="contain">Show Whole</button>
+            <button type="button" data-image-fit="cover">Fill Box</button>
+          </div>
+          <div class="calendar-status" id="calendarStatus" aria-live="polite"></div>
+        </section>
+
+        <section class="calendar-wrap" aria-label="Month calendar">
+          <div class="weekday-row" aria-hidden="true">
+            <span>Sun</span>
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+          </div>
+          <div class="calendar-grid" id="calendarGrid"></div>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="day-dialog" id="dayDialog" aria-labelledby="dialogTitle">
+      <form method="dialog" class="day-editor">
+        <div class="dialog-header">
+          <div>
+            <p class="eyebrow" id="dialogDate"></p>
+            <h2 id="dialogTitle">Day photo</h2>
+          </div>
+          <button class="icon-button" type="button" id="closeDialog" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+
+        <div class="editor-layout">
+          <div class="photo-stage" id="photoStage">
+            <img id="photoPreview" alt="" hidden />
+            <div class="photo-placeholder" id="photoPlaceholder" aria-hidden="true">
+              <span class="placeholder-icon">+</span>
+            </div>
+          </div>
+
+          <div class="editor-fields">
+            <div class="photo-strip" id="photoStrip" aria-label="Photos for this day"></div>
+
+            <label class="file-picker">
+              <input id="photoInput" type="file" accept="image/*" />
+              <span id="photoPickerLabel">Choose Photo</span>
+            </label>
+
+            <label>
+              <span>Title</span>
+              <input id="titleInput" type="text" autocomplete="off" maxlength="80" />
+            </label>
+
+            <label>
+              <span>Notes</span>
+              <textarea id="noteInput" rows="5" maxlength="500"></textarea>
+            </label>
+
+            <div class="dialog-actions">
+              <button class="secondary-button" type="button" id="addPhoto">Add Photo</button>
+              <button class="danger-button" type="button" id="removePhoto">Remove Photo</button>
+              <button class="secondary-button" type="button" id="cancelEdit">Cancel</button>
+              <button class="primary-button" type="submit" id="saveDay">Save</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
